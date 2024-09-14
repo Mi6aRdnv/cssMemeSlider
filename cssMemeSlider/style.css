@@ -41,6 +41,7 @@ html, body {
 .slider__img-box img {
     width: 100%;
     height: 100%;
+    user-select: none;
 }
 .slider__text-box {
     overflow: hidden;
@@ -64,7 +65,6 @@ visibility: hidden;
 }
 .slider__nav-btn {
     display: inline-block;
-    user-select: none;
     padding: 1vw;
     margin: 0.5vw;
     cursor: pointer;
@@ -84,19 +84,31 @@ visibility: hidden;
     transition: all 0.5s ease-in;
 }
 .slider__nav-btn:hover {
-   transform:scale(1.1);
+    transform:scale(1.1);
 }
 
 
 #s1:checked ~ .slider .knob {
     margin-left: 0;
- }
- #s2:checked ~ .slider .knob {
+}
+#s2:checked ~ .slider .knob {
     margin-left: -50%;
- }
- #s1:checked ~ .slider #slider__nav-btn1 .btn-style-elm {
+}
+#s1:checked ~ .slider #slider__nav-btn1 .btn-style-elm {
     background-color: transparent;
- }
- #s2:checked ~ .slider #slider__nav-btn2 .btn-style-elm {
+}
+#s2:checked ~ .slider #slider__nav-btn2 .btn-style-elm {
     background-color: transparent;
- }
+}
+
+@media (max-width: 800px) {
+    .wrap-row2 {
+        flex-direction: column-reverse;
+    }
+    .slider__nav-box {
+        margin: 0 auto;
+    }
+    .slider__text-box {
+        width: 90%;
+    }
+}
